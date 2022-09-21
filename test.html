@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn1">pairInstrument</button>
+    <button id="btn2">readConnectionStatus</button>
+    <script>
+        console.log(123);
+        const SDK = require("qsm-otter-sdk");
+        const btn1 = document.getElementById('btn1')
+        const btn2 = document.getElementById('btn2')
+        btn1.onclick = async () => {
+            console.log('pairInstrument start');
+            const port = await SDK.pairInstrument()
+            console.log("paired instrument", port)
+
+        }
+        btn2.onclick = async () => {
+            console.log('readConnectionStatus start');
+            const port = await SDK.readConnectionStatus()
+            console.log("readConnectionStatus", port)
+
+        }
+    </script>
+</body>
+
+</html>
